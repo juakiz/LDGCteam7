@@ -1,7 +1,8 @@
 export default class UnitInfo {
-    constructor(name, anchor, attack, HP, frameInfo) {
+    constructor(name, faction, anchor, attack, HP, frameInfo) {
   
         this.name = name;
+        this.faction = faction;
         this.anchor = anchor;
         this.frames = this.makeFrames(frameInfo);
         this.attack = attack;

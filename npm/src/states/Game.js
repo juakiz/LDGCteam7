@@ -28,24 +28,22 @@ export default class extends Phaser.State {
 
   init()
   {
-    console.log(this.world, this.game.world);
-    // this.mushroomGP = new Mushrooms(this.game);
+    // console.log(this);
     this.bgGP = new BG(this.game);
     this.basePiedraGP = new BasePiedraGP(this.game);
 
 
-
     this.UI = new UI(this.game);
 
-    this.game.input.onDown.add(this.shake, this);
+    // this.game.input.onDown.add(this.shake, this);
   }
 
-  shake() {
+  // shake() {
   
-    //  You can set your own intensity and duration
-    this.game.camera.shake(0.15, 1000);
+  //   //  You can set your own intensity and duration
+  //   this.game.camera.shake(0.15, 1000);
   
-  }
+  // }
   // render () {
   //   if (__DEV__) {
   //     this.game.debug.spriteInfo(this.mushroom, 32, 32)
