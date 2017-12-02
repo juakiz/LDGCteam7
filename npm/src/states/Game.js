@@ -32,10 +32,15 @@ export default class extends Phaser.State {
     this.bgGP = new BG(this.game);
     this.basePiedraGP = new BasePiedraGP(this.game);
 
-
+    
     this.UI = new UI(this.game);
 
     // this.game.input.onDown.add(this.shake, this);
+  }
+
+  update()
+  {
+    // this.basePiedraGP.updateA();
   }
 
   // shake() {

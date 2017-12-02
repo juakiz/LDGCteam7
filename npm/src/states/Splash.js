@@ -18,8 +18,8 @@ export default class extends Phaser.State {
     this.load.image('piedra_1', 'assets/placeholders/piedra.png');
     this.load.image('ui', 'assets/placeholders/ui.png');
     this.load.image('torre_vikingos_cortada', 'assets/placeholders/torre_vikingos.png');
-    this.load.spritesheet('pollo_ataque', 'assets/placeholders/pollo_ataque.png', 261/3, 107, 3);
-    this.load.spritesheet('pollo_caminar', 'assets/placeholders/pollo_caminar.png', 190/2, 107, 3);
+    this.load.spritesheet('pollo', 'assets/placeholders/pollo_ataque.png', 261/3, 107, 3);
+    // this.load.spritesheet('pollo_caminar', 'assets/placeholders/pollo_caminar.png', 190/2, 107, 2);
     // this.load.image('mushroom', 'assets/images/mushroom2.png');
     // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
   }
