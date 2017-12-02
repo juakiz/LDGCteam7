@@ -10,6 +10,9 @@ export default class extends Phaser.Group {
     this.x = this.game.world.width/2;
     this.y = piedra.y - piedra.height;
 
+    this.leftWeight = 0;
+    this.rightWeight = 0;
+
     console.log(this._state);
     this.init()
   }
@@ -35,6 +38,21 @@ export default class extends Phaser.Group {
   getAngle()
   {
       return this.angle;
+  }
+
+  setLeftWeight(amount)
+  {
+    this.leftWeight = amount;
+  }
+
+  setRightWeight(amount)
+  {
+    this.rightWeight = amount;    
+  }
+  addU
+  nit()
+  {
+
   }
 
   update () {

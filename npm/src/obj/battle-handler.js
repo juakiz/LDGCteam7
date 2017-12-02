@@ -46,22 +46,11 @@ export default class BattleHandler {
     init()  {
         this._BG = this._state.battleground;
         this._UI = this._state.UI;
-
-        // First two units "cinematic"
-        this.onFirstUnitDie = new Phaser.Signal();
-        this.onFirstUnitDie.addOnce(this.gameStart, this);        
-
-        let firstAllyType = "archer";
-        let firstEnemyType = "deadeye";
-        this.firstAlly = new Unit(this._game, this._BG, firstAllyType, Globals.SPAWN_POINTS.allies[firstAllyType][0].x, Globals.SPAWN_POINTS.allies[firstAllyType][0].y);
-        this.firstEnemy = new Unit(this._game, this._BG, firstEnemyType, Globals.SPAWN_POINTS.enemies[firstEnemyType][0].x, Globals.SPAWN_POINTS.enemies[firstEnemyType][0].y);
-        this.firstAlly.isFirstUnit = true;
-        this.firstEnemy.isFirstUnit = true;
     }
 
     gameStart()// Game starts after cinematic
     {
-        console.log("GAME STARTS")
+        // console.log("GAME STARTS")
         // this._UI.source.startTimer();
         this._UI.source.setCrystals(15);
         for(let i = 0; i < this._UI.unitIcons.length; i++)

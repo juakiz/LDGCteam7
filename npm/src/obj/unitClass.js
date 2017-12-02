@@ -10,7 +10,7 @@ export default class Unit extends Phaser.Group {
     this._state = game.state.getCurrentState();
     // this._view = this._state.view;
     this._BP = parent;
-    this._BH = this._state.BH;
+    // this._BH = this._state.BH;
 
     this.UID = ++this._BH.level.UnitCounter;
 
