@@ -10,7 +10,7 @@ export default class extends Phaser.Sprite {
 
   init()
   {
-    game.add.tween(this).to({ angle:360, x: '+600'}, 1000, Phaser.Easing.Elastic.In, true, 0, -1, true);
+    this.game.add.tween(this).to({ angle:360, x: '+600'}, 1000, Phaser.Easing.Elastic.In, true, 0, -1, true);
   }
 
   // update () {
