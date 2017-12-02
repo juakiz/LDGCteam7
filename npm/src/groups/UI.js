@@ -16,7 +16,7 @@ export default class extends Phaser.Group {
     this.rayoder = game.add.sprite(1126, 55, 'rayo');
     this.escizq = game.add.sprite(148, 58, 'escudo');
     this.escder = game.add.sprite(915, 58, 'escudo');
-    this.empujd = game.add.sprite(738, 56, 'empujd');
+    this.empujd = game.add.sprite(737, 56, 'empujd');
     this.empuji = game.add.sprite(358, 56, 'empuji');
     this.rayoizq.alpha=0;
     this.rayoder.alpha=0;
