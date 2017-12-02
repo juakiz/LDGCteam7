@@ -10,15 +10,7 @@ export default class extends Phaser.Group {
 
   init()
   {
-    // this.bg = game.add.sprite(0, 0, 'fondo');
-
-
-    // this.add(this.bg);
-
-    // this.game.add.tween(this).to({ x: '+10', y: '+10'}, 100, Phaser.Easing.Sinusoidal.InOut, true, 0, -1, true);
+    this.ui = game.add.sprite(0, 0, 'ui');
+    this.add(this.ui);
   }
-
-  // update () {
-  //   this.angle += 1
-  // }
 }

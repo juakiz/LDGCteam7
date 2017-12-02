@@ -16,6 +16,7 @@ export default class extends Phaser.State {
     this.load.image('fondo', 'assets/placeholders/fondo.jpg');
     this.load.image('base_piedra', 'assets/placeholders/base_piedra.png');
     this.load.image('piedra_1', 'assets/placeholders/piedra.png');
+    this.load.image('ui', 'assets/placeholders/ui.png');
     // this.load.image('mushroom', 'assets/images/mushroom2.png');
     // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
   }
