@@ -14,7 +14,8 @@ export default class extends Phaser.Group {
         game: this.game,
         x: this.game.world.centerX,
         y: this.game.world.centerY,
-        asset: 'mushroom'
+        asset: 'mushroom',
+        maxHP: 100
       })
 
 
