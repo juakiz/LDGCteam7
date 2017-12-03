@@ -38,6 +38,17 @@ export default class extends Phaser.State {
     // this.game.input.onDown.add(this.shake, this);
   }
 
+  WIN(isAliens)
+  {
+    let faction = isAliens ? 'aliens_win' : 'vikings_win';
+    let WINTXT = game.add.sprite(1280/2, 720/2, faction);
+    WINTXT.anchor.set(0.5);
+
+    this.game.add.tween(WINTXT.scale).from({ x: 0, y:0}, 1000, Phaser.Easing.Elastic.Out, true)
+
+    this.add.existing(WINTXT);
+  }
+
   update()
   {
     // this.basePiedraGP.updateA();

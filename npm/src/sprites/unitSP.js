@@ -68,7 +68,7 @@ export default class extends Phaser.Group {
   this.ani_caminar = this.unit.animations.add('caminar', aWalk);
   this.ani_caminar.enableUpdate = true;
   this.ani_caminar.onUpdate.add(this.updateWalking, this);
-  console.log ("I'm " , this.unit);
+  // console.log ("I'm " , this.unit);
   this.walk();
 
   this.add(this.unit);
@@ -145,8 +145,8 @@ export default class extends Phaser.Group {
     return this.realWeight * Math.abs(this.x/531);
  }
 
-//  stop()
-//  {
-//   this.speed = 0;
-//  }
+ stopWalk()
+ {
+  this.speed = 0;
+ }
 }

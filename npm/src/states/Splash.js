@@ -45,7 +45,7 @@ export default class extends Phaser.State {
     this.load.image('gusanoicon1', 'assets/placeholders/gusano_oscuro.png');
     this.load.image('calaveraicon', 'assets/placeholders/calavera.png');
     this.load.image('calaveraicon1', 'assets/placeholders/calavera_oscuro.png');
-    this.load.image('creditoscarg', 'assets/placeholders/creditos.png');
+    this.load.image('creditoscarg', 'assets/placeholders/creditos.jpg');
     this.load.image('vikingo1c', 'assets/placeholders/vikingo1.png');
     this.load.image('vikingo1o', 'assets/placeholders/vikingo1o.png');
     this.load.image('vikingo2c', 'assets/placeholders/vikingo2.png');
@@ -53,8 +53,8 @@ export default class extends Phaser.State {
     this.load.image('vikingo3c', 'assets/placeholders/vikingo3.png');
     this.load.image('vikingo3o', 'assets/placeholders/vikingo3o.png');
     this.load.audio("musicamenu","assets/music/Hearts_forged_with_fire.mp3");
-    // this.load.image('mushroom', 'assets/images/mushroom2.png');
-    // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
+    this.load.image('aliens_win', 'assets/placeholders/aliens_win.png');
+    this.load.image('vikings_win', 'assets/placeholders/vikings_win.png');
   }
 
   create () {

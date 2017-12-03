@@ -154,9 +154,6 @@ export default class extends Phaser.Group {
     this.vikingo3po.alpha=0;
       }, this)
     
-
-
-
     
   }
 }

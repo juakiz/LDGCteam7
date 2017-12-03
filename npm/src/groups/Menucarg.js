@@ -25,7 +25,7 @@ export default class extends Phaser.Group {
     }, this);
     this.start.inputEnabled = true;
     this.start.events.onInputDown.addOnce(()=>{
-      sonido.stop();
+      this.sonido.stop();
       game.state.start('Game');
     }, this);
 

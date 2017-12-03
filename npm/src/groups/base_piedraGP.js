@@ -52,6 +52,17 @@ export default class extends Phaser.Group {
     this.loop = this.game.time.events.loop(500, this.setBalance, this);    
   }
 
+  // WIN(isAliens)
+  // {
+  //   let faction = isAliens ? 'aliens_win' : 'vikings_win';
+  //   let WINTXT = game.add.sprite(1280/2, 720/2, faction);
+  //   WINTXT.anchor.set(0.5);
+
+  //   this.game.add.tween(WINTXT.scale).from({ x: 0, y:0}, 250, Phaser.Easing.Elastic.Out, true)
+
+  //   this.add(WINTXT);
+  // }
+
   spawnUnit(asset)
   {
     new Unit(game, this, asset);
@@ -105,6 +116,8 @@ export default class extends Phaser.Group {
   {
     this.balancetween.stop();
     game.time.events.remove(this.loop);
-    this.game.add.tween(this).to({ y: this.game.world.height *2}, 1000, Phaser.Easing.Quadratic.In, true);
+    this.game.add.tween(this).to({ y: this.game.world.height *2}, 1000, Phaser.Easing.Quadratic.In, true)
+    .onComplete.add(()=>{this.x = -10000; this.y = -10000;});
+    this._state.WIN(positive);
   }
 }
