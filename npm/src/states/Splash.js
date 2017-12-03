@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import { centerGameObjects } from '../utils'
 
+
 export default class extends Phaser.State {
   init () {}
 
@@ -29,9 +30,19 @@ export default class extends Phaser.State {
     this.load.spritesheet('pollo_caminar', 'assets/placeholders/pollo_caminar.png', 190/2, 107, 3);
     // this.load.image('mushroom', 'assets/images/mushroom2.png');
     // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
+    this.load.image('menu', 'assets/placeholders/menu_juego.png');
+    this.load.image('start', 'assets/placeholders/start_oscuro.png');
+    this.load.image('instrucciones', 'assets/placeholders/instrucc_oscuro.png');
+    this.load.image('creditos', 'assets/placeholders/creditos_oscuro.png');
+    this.load.image('instruct_1', 'assets/placeholders/instruct_1.png');
+    this.load.image('instruct_2', 'assets/placeholders/instruct_2.png');
+    this.load.image('back', 'assets/placeholders/back.png');
+    this.load.image('next', 'assets/placeholders/next.png');
+    this.load.image('creditoscarg', 'assets/placeholders/creditos.png');
   }
 
   create () {
-    this.state.start('Game')
+    this.state.start('Menu')
   }
+
 }
