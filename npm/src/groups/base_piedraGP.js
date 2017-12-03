@@ -19,18 +19,18 @@ export default class extends Phaser.Group {
 
     this.units = {aliens: [], vikings: []};
 
-    this.KeyA = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
-    this.KeyS = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
-    this.KeyD = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
-    this.KeyJ = this.game.input.keyboard.addKey(Phaser.Keyboard.J);
-    this.KeyK = this.game.input.keyboard.addKey(Phaser.Keyboard.K);
-    this.KeyL = this.game.input.keyboard.addKey(Phaser.Keyboard.L);
-    this.KeyA.onDown.add(()=>{this.spawnUnit('pollo');});
-    this.KeyS.onDown.add(()=>{this.spawnUnit('slime');});
-    this.KeyD.onDown.add(()=>{this.spawnUnit('gusano');});
-    this.KeyJ.onDown.add(()=>{this.spawnUnit('vikingo1');});
-    this.KeyK.onDown.add(()=>{this.spawnUnit('vikingo2');});
-    this.KeyL.onDown.add(()=>{this.spawnUnit('vikingo3');});
+    this.KeyQ = this.game.input.keyboard.addKey(Phaser.Keyboard.Q);
+    this.KeyW = this.game.input.keyboard.addKey(Phaser.Keyboard.W);
+    this.KeyE = this.game.input.keyboard.addKey(Phaser.Keyboard.E);
+    this.KeyI = this.game.input.keyboard.addKey(Phaser.Keyboard.I);
+    this.KeyO = this.game.input.keyboard.addKey(Phaser.Keyboard.O);
+    this.KeyP = this.game.input.keyboard.addKey(Phaser.Keyboard.P);
+    this.KeyQ.onDown.add(()=>{this.spawnUnit('pollo');});
+    this.KeyW.onDown.add(()=>{this.spawnUnit('slime');});
+    this.KeyE.onDown.add(()=>{this.spawnUnit('gusano');});
+    this.KeyI.onDown.add(()=>{this.spawnUnit('vikingo1');});
+    this.KeyO.onDown.add(()=>{this.spawnUnit('vikingo2');});
+    this.KeyP.onDown.add(()=>{this.spawnUnit('vikingo3');});
 
     console.log(this._state);
     this.init();
@@ -49,7 +49,7 @@ export default class extends Phaser.Group {
     // this.game.add.tween(this).to({ angle: '+60'}, 10000, Phaser.Easing.Sinusoidal.InOut, true, 0, -1, true);
     // console.log(this.exists);
 
-    this.game.time.events.loop(500, this.setBalance, this);    
+    this.loop = this.game.time.events.loop(500, this.setBalance, this);    
   }
 
   spawnUnit(asset)
@@ -93,16 +93,18 @@ export default class extends Phaser.Group {
 
     this.balance = this.rightWeight - this.leftWeight;
     // console.log(this.balance);
-    this.game.add.tween(this).to({ angle: this.balance}, 1000, Phaser.Easing.Sinusoidal.InOut, true, 0, -1, true);
-    if(this.balance > 40)
-      this.stoneFall();
+    this.balancetween = this.game.add.tween(this).to({ angle: this.balance}, 1000, Phaser.Easing.Sinusoidal.InOut, true, 0, -1, true);
+    if(this.angle > 40)
+      this.stoneFall(true);
+    else if(this.angle < -40)
+      this.stoneFall(false);
   }
 
 
-  stoneFall ()
+  stoneFall (positive)
   {
-    // let x = ;
-    // let y = ;
-    // this.game.add.tween(this).to({ x: this.balance, }, 1000, Phaser.Easing.Sinusoidal.InOut, true, 0, -1, true);
+    this.balancetween.stop();
+    game.time.events.remove(this.loop);
+    this.game.add.tween(this).to({ y: this.game.world.height *2}, 1000, Phaser.Easing.Quadratic.In, true);
   }
 }

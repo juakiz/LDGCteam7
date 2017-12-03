@@ -8,17 +8,17 @@ export default class extends Phaser.Group {
     
     // UNIT INFO OBJECT
     this.OBJ_UNIT_INFO = {
-      pollo:    {faction: 'aliens', dmg: 1, hp: 20, aWalk: [0,1], aAttack: [1,2,3]},
-      gusano:   {faction: 'aliens', dmg: 2, hp: 40, aWalk: [0,1], aAttack: [0,0]},
-      slime:    {faction: 'aliens', dmg: 1, hp: 30, aWalk: [0,1,2,3], aAttack: [3,4,5]},
-      vikingo1: {faction: 'vikings', dmg: 1, hp: 20, aWalk: [0,1,2,3], aAttack: [3,4,5]},
-      vikingo2: {faction: 'vikings', dmg: 2, hp: 40, aWalk: [0,1,2,3], aAttack: [3,4,5]},
-      vikingo3: {faction: 'vikings', dmg: 1, hp: 30, aWalk: [0,1,2,3], aAttack: [3,4,5]},
-      
+      pollo:    {faction: 'aliens', speed: 6, dmg: 1, hp: 20, aWalk: [0,1], aAttack: [1,2,3]},
+      slime:    {faction: 'aliens', speed: 4, dmg: 1, hp: 40, aWalk: [0,1,2,3], aAttack: [3,4,5]},
+      gusano:   {faction: 'aliens', speed: 2, dmg: 2, hp: 30, aWalk: [0,1], aAttack: [0,1,2]},
+      vikingo1: {faction: 'vikings', speed: 6, dmg: 1, hp: 20, aWalk: [0,1,2,3], aAttack: [3,4,5]},
+      vikingo2: {faction: 'vikings', speed: 4, dmg: 2, hp: 40, aWalk: [0,1,2,3], aAttack: [3,4,5]},
+      vikingo3: {faction: 'vikings', speed: 2, dmg: 1, hp: 30, aWalk: [0,1,2,3], aAttack: [3,4,5]},
     };
     
     this.type = this.OBJ_UNIT_INFO[asset];
     this.faction = this.type.faction;
+    this.speed = this.type.speed;
     this.arr_unit = parent.units;
 
     this.UID = ++parent.UnitCounter;    
@@ -61,7 +61,7 @@ export default class extends Phaser.Group {
   this.unit = game.add.sprite(0, 0, asset);
   
   this.unit.anchor.set(0.5, 1);
-  this.collision = this.unit.width*0.6;
+  this.collision = 50;//this.unit.width*0.6;
   // console.log(this, this.collision);
   this.x += this.collision * this.sign;
   this.ani_ataque = this.unit.animations.add('ataque', aAttack);
@@ -108,7 +108,7 @@ export default class extends Phaser.Group {
    let target = this.checkEnemyDistances(this.enemies);
    if(!target)
    {
-    this.x += 3 * this.sign;    
+    this.x += this.speed * this.sign;    
    }
    else
    {
@@ -144,4 +144,9 @@ export default class extends Phaser.Group {
  {
     return this.realWeight * Math.abs(this.x/531);
  }
+
+//  stop()
+//  {
+//   this.speed = 0;
+//  }
 }
