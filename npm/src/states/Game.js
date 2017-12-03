@@ -3,7 +3,9 @@ import Phaser from 'phaser'
 import BG from '../groups/backgroundGP'
 import BasePiedraGP from '../groups/base_piedraGP'
 import UI from '../groups/UI'
+
 export default class extends Phaser.State {
+  init () {}
   preload () {
     // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
     // this.load.image('base_piedra', 'assets/placeholders/base_piedra.png');
