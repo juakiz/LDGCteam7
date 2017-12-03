@@ -19,9 +19,13 @@ export default class extends Phaser.Group {
     this.add(this.start);
     this.add(this.instrucciones);
     this.add(this.creditos);
-
+    this.sonido = game.add.audio("musicamenu"); 
+    game.sound.setDecodedCallback([ this.sonido ], function(){
+        this.sonido.play();
+    }, this);
     this.start.inputEnabled = true;
     this.start.events.onInputDown.addOnce(()=>{
+      sonido.stop();
       game.state.start('Game');
     }, this);
 

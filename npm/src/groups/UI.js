@@ -56,6 +56,7 @@ export default class extends Phaser.Group {
     this.add(this.vikingo1i); 
     this.add(this.vikingo2o);
     this.add(this.vikingo3p);  
+    game.load.audio("MiSonido","music/Hearts_forged_with_fire.mp3");
 
     this.debugKeyA = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
     this.debugKeyA.onDown.add(()=>{

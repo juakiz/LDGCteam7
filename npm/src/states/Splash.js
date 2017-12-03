@@ -51,7 +51,8 @@ export default class extends Phaser.State {
     this.load.image('vikingo2c', 'assets/placeholders/vikingo2.png');
     this.load.image('vikingo2o', 'assets/placeholders/vikingo2o.png');
     this.load.image('vikingo3c', 'assets/placeholders/vikingo3.png');
-    this.load.image('vikingo3o', 'assets/placeholders/vikingo3o.png')
+    this.load.image('vikingo3o', 'assets/placeholders/vikingo3o.png');
+    this.load.audio("musicamenu","assets/music/Hearts_forged_with_fire.mp3");
     // this.load.image('mushroom', 'assets/images/mushroom2.png');
     // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
   }
