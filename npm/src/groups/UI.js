@@ -6,9 +6,7 @@ export default class extends Phaser.Group {
     super(game, state)
 
     this.init()
-  }
-
-  
+  } 
   init()
   {
     this.rayoizq = game.add.sprite(-2, 55, 'rayo');
@@ -24,6 +22,12 @@ export default class extends Phaser.Group {
     this.calaverawo= game.add.sprite(140, 620, 'calaveraicon1');
     this.gusanoe= game.add.sprite(250, 620, 'gusanoicon');
     this.gusanoeo= game.add.sprite(250, 620, 'gusanoicon1');
+    this.vikingo1i= game.add.sprite(940, 620, 'vikingo1');
+    this.vikingo1io= game.add.sprite(940, 620, 'vikingo1o');
+    this.vikingo2o= game.add.sprite(1050, 620, 'vikingo2');
+    this.vikingo2oo= game.add.sprite(1050, 620, 'vikingo2o');
+    this.vikingo3p= game.add.sprite(1160, 620, 'vikingo3');
+    this.vikingo3po= game.add.sprite(1160, 620, 'vikingo3o');
     this.rayoizq.alpha=0;
     this.rayoder.alpha=0;
     this.escizq.alpha=0;
@@ -33,6 +37,9 @@ export default class extends Phaser.Group {
     this.polloqo.alpha=0;
     this.calaverawo.alpha=0;
     this.gusanoeo.alpha=0;
+    this.vikingo1io.alpha=0;
+    this.vikingo2oo.alpha=0;
+    this.vikingo3po.alpha=0;
     this.add(this.ui);
     this.add(this.rayoizq);
     this.add(this.rayoder);
@@ -46,6 +53,9 @@ export default class extends Phaser.Group {
     this.add(this.calaverawo); 
     this.add(this.gusanoe); 
     this.add(this.gusanoeo); 
+    this.add(this.vikingo1i); 
+    this.add(this.vikingo2o);
+    this.add(this.vikingo3p);  
 
     this.debugKeyA = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
     this.debugKeyA.onDown.add(()=>{
@@ -119,6 +129,31 @@ export default class extends Phaser.Group {
     this.gusanoeo.alpha=0;
       }, this);
     
+    this.debugKeyI = this.game.input.keyboard.addKey(Phaser.Keyboard.I);
+    this.debugKeyI.onDown.add(()=>{
+      this.vikingo1io.alpha=1;
+      }, this);
+    this.debugKeyI.onUp.add(()=>{
+    this.vikingo1io.alpha=0;
+      }, this);
+    
+    this.debugKeyO = this.game.input.keyboard.addKey(Phaser.Keyboard.O);
+    this.debugKeyO.onDown.add(()=>{
+      this.vikingo2oo.alpha=1;
+      }, this);
+    this.debugKeyO.onUp.add(()=>{
+    this.vikingo2oo.alpha=0;
+      }, this);
+    
+    this.debugKeyP = this.game.input.keyboard.addKey(Phaser.Keyboard.P);
+    this.debugKeyP.onDown.add(()=>{
+      this.vikingo3po.alpha=1;
+      }, this);
+    this.debugKeyP.onUp.add(()=>{
+    this.vikingo3po.alpha=0;
+      }, this)
+    
+
 
 
     

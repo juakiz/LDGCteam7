@@ -45,7 +45,12 @@ export default class extends Phaser.State {
     this.load.image('calaveraicon', 'assets/placeholders/calavera.png');
     this.load.image('calaveraicon1', 'assets/placeholders/calavera_oscuro.png');
     this.load.image('creditoscarg', 'assets/placeholders/creditos.png');
-
+    this.load.image('vikingo1', 'assets/placeholders/vikingo1.png');
+    this.load.image('vikingo1o', 'assets/placeholders/vikingo1o.png');
+    this.load.image('vikingo2', 'assets/placeholders/vikingo2.png');
+    this.load.image('vikingo2o', 'assets/placeholders/vikingo2o.png');
+    this.load.image('vikingo3', 'assets/placeholders/vikingo3.png');
+    this.load.image('vikingo3o', 'assets/placeholders/vikingo3o.png');
   }
 
   create () {
