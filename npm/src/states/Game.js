@@ -5,7 +5,7 @@ import BasePiedraGP from '../groups/base_piedraGP'
 import UI from '../groups/UI'
 
 export default class extends Phaser.State {
-  init () {}
+  
   preload () {
     // this.load.image('fondo', 'assets/placeholders/fondo.jpg');
     // this.load.image('base_piedra', 'assets/placeholders/base_piedra.png');
@@ -23,16 +23,16 @@ export default class extends Phaser.State {
     // banner.anchor.setTo(0.5)
 
     // this.game.add.existing(this.mushroom)
-    this.init();
+    this.initMIO();
   }
 
-  init()
+  initMIO()
   {
     // console.log(this);
     this.bgGP = new BG(this.game);
     this.basePiedraGP = new BasePiedraGP(this.game);
 
-    
+    // console.log("HOLAA")
     this.UI = new UI(this.game);
 
     // this.game.input.onDown.add(this.shake, this);

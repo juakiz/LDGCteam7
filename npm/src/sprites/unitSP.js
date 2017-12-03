@@ -11,9 +11,9 @@ export default class extends Phaser.Group {
       pollo:    {faction: 'aliens', dmg: 1, hp: 20, aWalk: [0,1], aAttack: [1,2,3]},
       gusano:   {faction: 'aliens', dmg: 2, hp: 40, aWalk: [0,1], aAttack: [0,0]},
       slime:    {faction: 'aliens', dmg: 1, hp: 30, aWalk: [0,1,2,3], aAttack: [3,4,5]},
-      vikingo1: {faction: 'vikings', dmg: 1, hp: 20, aWalk: [0,1], aAttack: [1,2,3]},
-      vikingo2: {faction: 'vikings', dmg: 2, hp: 40, aWalk: [0,1], aAttack: [0,0]},
-      vikingo3: {faction: 'vikings', dmg: 1, hp: 30, aWalk: [0,1,2,3], aAttack: [3,4,5]}
+      vikingo1: {faction: 'vikings', dmg: 1, hp: 20, aWalk: [0,1,2,3], aAttack: [3,4,5]},
+      vikingo2: {faction: 'vikings', dmg: 2, hp: 40, aWalk: [0,1,2,3], aAttack: [3,4,5]},
+      vikingo3: {faction: 'vikings', dmg: 1, hp: 30, aWalk: [0,1,2,3], aAttack: [3,4,5]},
       
     };
     
@@ -49,7 +49,7 @@ export default class extends Phaser.Group {
     }
 
     this.realWeight = this.hp;
-
+    
     this.init(asset, this.type.aAttack, this.type.aWalk);
   }
 
@@ -59,6 +59,7 @@ export default class extends Phaser.Group {
 
  init(asset, aAttack, aWalk){
   this.unit = game.add.sprite(0, 0, asset);
+  
   this.unit.anchor.set(0.5, 1);
   this.collision = this.unit.width*0.6;
   // console.log(this, this.collision);
@@ -67,6 +68,7 @@ export default class extends Phaser.Group {
   this.ani_caminar = this.unit.animations.add('caminar', aWalk);
   this.ani_caminar.enableUpdate = true;
   this.ani_caminar.onUpdate.add(this.updateWalking, this);
+  console.log ("I'm " , this.unit);
   this.walk();
 
   this.add(this.unit);
